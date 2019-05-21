@@ -8,7 +8,7 @@ const orm = {
         console.log(result);
       });
     },
-    selectAndOrder: function(whatToSelect, table, orderCol) {
+    InsertOne: function(whatToSelect, table, orderCol) {
       const queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
       console.log(queryString);
       connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
