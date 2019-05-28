@@ -16,7 +16,7 @@ const orm = {
         console.log(result);
       });
     },
-    findWhoHasMost: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
+    updateOne: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
       const queryString =
         "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
   
