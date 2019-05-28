@@ -9,7 +9,7 @@ const orm = {
       });
     },
     InsertOne: function(whatToSelect, table, orderCol) {
-      const queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
+      const queryString = "INSERT INTO burger (?) value(?))";
       console.log(queryString);
       connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
         if (err) throw err;
@@ -18,8 +18,7 @@ const orm = {
     },
     updateOne: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
       const queryString =
-        "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
-  
+        "UPDATE ?? SET ?? WHERE ??";
       connection.query(
         queryString,
         [tableOneCol, tableOneCol, tableOne, tableTwo, tableTwo, tableTwoForeignKey, tableOne, tableOneCol],
