@@ -1,7 +1,10 @@
 <h1>Burgers</h1>
 
-<h2>Burgers that are not devoured!</h2>
 
+
+<div id="container">
+    <div>
+<h2>Burgers that are not devoured!</h2>
 <ul>
   {{#each burgers}}
     {{#unless devouered}}
@@ -9,7 +12,12 @@
     {{/unless}}
   {{/each}}
 </ul>
+</div>
+</div>
 
+
+<div>
+    <div>
 <h2>Burgers that are devoured!</h2>
 
 <ul>
@@ -19,6 +27,8 @@
     {{/if}}
   {{/each}}
 </ul>
+</div>
+</div>
 
 <h2>Add a burger</h2>
 <form class="create-form">
