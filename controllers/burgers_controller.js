@@ -6,7 +6,7 @@ const burger = require("../models/burgers.js");
 
 router.get("/", function (req, res) {
     console.log("we're inside the route")
-    burger.all(function (data) {
+    burger.selectAll(function (data) {
         var hbsObject = {
             burger: data
         };
@@ -18,7 +18,7 @@ router.get("/", function (req, res) {
 
 
 router.post("/", function (req, res) {
-    burger.create([req.body.burger_name, req.body.devoured], function (result) {
+    burger.insertOne([req.body.burger_name, req.body.devoured], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
