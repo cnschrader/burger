@@ -1,5 +1,6 @@
 const connection = require("./connection.js");
 
+const orm = {
 selectAll: function(tableName, cb) {
   var queryString = `SELECT * FROM ${tableName}`;
 
@@ -69,5 +70,7 @@ insertOne: function(table, cols, vals, cb) {
     cb(result);
   });
 },
+
+}
   module.exports = orm;
   
