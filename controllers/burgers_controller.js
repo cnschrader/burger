@@ -24,5 +24,13 @@ router.post("/", function (req, res) {
     });
 });
 
+router.put("/:id", function (req, res) {
+    burger.updateOne([req.params.id], function (result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+    });
+});
+
+
 
 module.exports = router;

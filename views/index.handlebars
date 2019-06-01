@@ -6,24 +6,23 @@
     <div>
         <h2>Burgers that are not devoured!</h2>
         <ul>
-            {{#each burgers}}
+            {{#each burger}}
             {{#unless devouered}}
-
+            <li>{{burger_name}}</li>
+            {{> burger-block }}
             {{/unless}}
             {{/each}}
         </ul>
     </div>
-
-
 
     <div>
         <div>
             <h2>Burgers that are devoured!</h2>
 
             <ul>
-                {{#each burgers}}
+                {{#each burger}}
                 {{#if devouered}}
-
+                <li>{{burger_name}}</li>
                 {{/if}}
                 {{/each}}
             </ul>

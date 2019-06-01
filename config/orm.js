@@ -1,35 +1,73 @@
 const connection = require("./connection.js");
 
-const orm = {
-    selectAll: function(tableName, cb) {
-      const queryString = "SELECT * FROM ??";
-      connection.query(queryString, [tableName], function(err, result) {
-        if (err) throw err;
-        console.log(result);
-        cb(result);
-      });
-    },
-    insertOne: function(cols, vals) {
-      const queryString = "INSERT INTO burger (?) value(?))";
-      console.log(queryString);
-      connection.query(queryString, [cols, vals], function(err, result) {
-        if (err) throw err;
-        console.log(result);
-      });
-    },
-    updateOne: function(tableName, cols, vals) {
-      const queryString =
-        "UPDATE ?? SET ?? WHERE ??";
-      connection.query(
-        queryString,
-        [tableName, cols, vals],
-        function(err, result) {
-          if (err) throw err;
-          console.log(result);
-        }
-      );
+selectAll: function(tableName, cb) {
+  var queryString = `SELECT * FROM ${tableName}`;
+
+  function printQuestionMarks(num) {
+    var arr = [];
+
+    for (let i = 0; i < num; i++) {
+      arr.push("?");
     }
-  };
+
+    return arr.toString();
+  }
+
+  console.log(queryString);
+
+  connection.query(queryString, vals, function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
+},
+
+updateOne: function(table, cols, vals, cb) {
+  var queryString = `UPDATE ${table} SET (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
+
+  function printQuestionMarks(num) {
+    var arr = [];
+
+    for (let i = 0; i < num; i++) {
+      arr.push("?");
+    }
+
+    return arr.toString();
+  }
+
+  console.log(queryString);
+
+  connection.query(queryString, vals, function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
+},
   
+
+insertOne: function(table, cols, vals, cb) {
+  var queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
+
+  function printQuestionMarks(num) {
+    var arr = [];
+
+    for (let i = 0; i < num; i++) {
+      arr.push("?");
+    }
+
+    return arr.toString();
+  }
+
+  console.log(queryString);
+
+  connection.query(queryString, vals, function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
+},
   module.exports = orm;
   
