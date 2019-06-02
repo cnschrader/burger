@@ -1,3 +1,12 @@
+/* body{
+    background-image: url("https://images.unsplash.com/photo-1559249448-c4347516e963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
+
+
+
 #container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -12,4 +21,24 @@
 
 h1{
     text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 5em;
+}
+
+img{
+    height: 5%;
+    width: 100%;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+li{
+    font-size: 20px;
+    list-style-type: none;
+}
+
+label{
+    font-size: 20px;
 }
