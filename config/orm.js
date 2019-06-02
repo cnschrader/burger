@@ -16,7 +16,7 @@ selectAll: function(tableName, cb) {
 
   console.log(queryString);
 
-  connection.query(queryString, vals, function(err, result) {
+  connection.query(queryString, function(err, result) {
     if (err) {
       throw err;
     }
@@ -24,8 +24,8 @@ selectAll: function(tableName, cb) {
   });
 },
 
-updateOne: function(table, cols, vals, cb) {
-  var queryString = `UPDATE ${table} SET (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
+updateOne: function(table, cols, vals, id, cb) {
+  var queryString = `UPDATE ${table} SET ${cols.toString()} = ${printQuestionMarks(vals.length)} WHERE id = ${id}`;
 
   function printQuestionMarks(num) {
     var arr = [];

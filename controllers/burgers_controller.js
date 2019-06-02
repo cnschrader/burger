@@ -18,17 +18,20 @@ router.get("/", function (req, res) {
 
 
 router.post("/", function (req, res) {
-    burger.insertOne([req.body.burger_name, req.body.devoured], function (result) {
+    console.log(req.body);
+    burger.insertOne([req.body.name], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
+ 
 });
 
 router.put("/:id", function (req, res) {
-    burger.updateOne([req.params.id], function (result) {
+    burger.updateOne([req.body.name], req.params.id, function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
+    // res.send(req.params.id);
 });
 
 
