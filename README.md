@@ -32,12 +32,12 @@ or, if you have nodemon installed
 
 ## Built with
 
-MySQL - Database
-Express.js - Node.js Framework
-Node.js - JavaScript runtime
-npm - Package management
-Handlebars.js - Templating engine
-Bootstrap - CSS framework
+- MySQL - Database
+- Express.js - Node.js Framework
+- Node.js - JavaScript runtime
+- npm - Package management
+- Handlebars.js - Templating engine
+- Bootstrap - CSS framework
 
 
 
