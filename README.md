@@ -30,5 +30,16 @@ or, if you have nodemon installed
 
 `nodemon`
 
+## Built with
+
+MySQL - Database
+Express.js - Node.js Framework
+Node.js - JavaScript runtime
+npm - Package management
+Handlebars.js - Templating engine
+Bootstrap - CSS framework
+
+
+
 
 
